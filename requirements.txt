@@ -1,0 +1,9 @@
+# Intentionally empty: the prototype runs on the Python standard library only
+# (json, math, re, urllib, unittest, argparse). Nothing to pip install.
+#
+# Verified on CPython 3.13; requires Python 3.9 or newer.
+#
+# If you want the same model with batteries included, the equivalent stack is:
+#   scikit-learn==1.5.*   # TfidfVectorizer + MultinomialNB
+#   openai==1.*           # OpenAI-compatible chat completions
+# The point of this repo is that neither is needed to run the demo.

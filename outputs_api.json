@@ -1,0 +1,186 @@
+{
+  "engine": "api",
+  "summary": {
+    "count": 6,
+    "errors": 0,
+    "needs_review": 0,
+    "categories": {
+      "account": 1,
+      "billing": 1,
+      "other": 1,
+      "shipping": 2,
+      "technical": 1
+    },
+    "urgencies": {
+      "critical": 2,
+      "high": 3,
+      "low": 1
+    },
+    "elapsed_seconds": 9.9,
+    "seconds_per_ticket": 1.65,
+    "config": {
+      "engine": "public-llm-api",
+      "endpoint": "https://text.pollinations.ai/openai",
+      "model": "openai-fast",
+      "api_key_configured": false
+    }
+  },
+  "results": [
+    {
+      "text": "We were billed 3 times today for the same invoice and our bank is calling us, this needs fixing this hour.",
+      "engine": "api",
+      "model": "openai-fast",
+      "category": "billing",
+      "category_confidence": 0.95,
+      "urgency": "critical",
+      "urgency_model_guess": "critical",
+      "urgency_source": "api",
+      "urgency_confidence": 0.95,
+      "summary": "Duplicate billing, urgent resolution needed",
+      "team": "billing-team",
+      "sla_hours": 1,
+      "requires_review": false,
+      "attempts": 1,
+      "tokens": {
+        "prompt_tokens": 223,
+        "completion_tokens": 90,
+        "total_tokens": 313,
+        "cached": true
+      },
+      "latency_ms": 0,
+      "raw": "{\"category\":\"billing\",\"urgency\":\"critical\",\"summary\":\"Duplicate billing, urgent resolution needed\",\"confidence\":0.95}",
+      "id": "X-1",
+      "gold": {}
+    },
+    {
+      "text": "App keeps crashing when I attach a photo to a message. Reinstalled twice, phone is a Pixel 8.",
+      "engine": "api",
+      "model": "openai-fast",
+      "category": "technical",
+      "category_confidence": 0.95,
+      "urgency": "high",
+      "urgency_model_guess": "high",
+      "urgency_source": "api",
+      "urgency_confidence": 0.95,
+      "summary": "App crashes when attaching photo",
+      "team": "support-l2-engineering",
+      "sla_hours": 4,
+      "requires_review": false,
+      "attempts": 1,
+      "tokens": {
+        "prompt_tokens": 220,
+        "completion_tokens": 109,
+        "total_tokens": 329,
+        "cached": true
+      },
+      "latency_ms": 0,
+      "raw": "{\"category\":\"technical\",\"urgency\":\"high\",\"summary\":\"App crashes when attaching photo\",\"confidence\":0.95}",
+      "id": "X-2",
+      "gold": {}
+    },
+    {
+      "text": "Tracking has not updated in 11 days and the courier website says label created only.",
+      "engine": "api",
+      "model": "openai-fast",
+      "category": "shipping",
+      "category_confidence": 0.95,
+      "urgency": "high",
+      "urgency_model_guess": "high",
+      "urgency_source": "api",
+      "urgency_confidence": 0.95,
+      "summary": "Shipping delay, tracking not updated for 11 days",
+      "team": "logistics-team",
+      "sla_hours": 4,
+      "requires_review": false,
+      "attempts": 1,
+      "tokens": {
+        "prompt_tokens": 213,
+        "completion_tokens": 171,
+        "total_tokens": 384,
+        "cached": true
+      },
+      "latency_ms": 13,
+      "raw": "{\"category\":\"shipping\",\"urgency\":\"high\",\"summary\":\"Shipping delay, tracking not updated for 11 days\",\"confidence\":0.95}",
+      "id": "X-3",
+      "gold": {}
+    },
+    {
+      "text": "I think someone else has my password: unfamiliar logins from another country in the last hour.",
+      "engine": "api",
+      "model": "openai-fast",
+      "category": "account",
+      "category_confidence": 0.95,
+      "urgency": "critical",
+      "urgency_model_guess": "critical",
+      "urgency_source": "api",
+      "urgency_confidence": 0.95,
+      "summary": "Suspicious login, account compromised, 2FA disabled",
+      "team": "account-security-team",
+      "sla_hours": 1,
+      "requires_review": false,
+      "attempts": 1,
+      "tokens": {
+        "prompt_tokens": 215,
+        "completion_tokens": 240,
+        "total_tokens": 455,
+        "cached": true
+      },
+      "latency_ms": 0,
+      "raw": "{\"category\":\"account\",\"urgency\":\"critical\",\"summary\":\"Suspicious login, account compromised, 2FA disabled\",\"confidence\":0.95}",
+      "id": "X-4",
+      "gold": {}
+    },
+    {
+      "text": "Just wanted to say the new onboarding flow is really nice, thanks team!",
+      "engine": "api",
+      "model": "openai-fast",
+      "category": "other",
+      "category_confidence": 0.99,
+      "urgency": "low",
+      "urgency_model_guess": "low",
+      "urgency_source": "api",
+      "urgency_confidence": 0.99,
+      "summary": "Positive feedback on onboarding flow",
+      "team": "support-l1",
+      "sla_hours": 72,
+      "requires_review": false,
+      "attempts": 1,
+      "tokens": {
+        "prompt_tokens": 202,
+        "completion_tokens": 122,
+        "total_tokens": 324
+      },
+      "latency_ms": 9878,
+      "raw": "{\"category\":\"other\",\"urgency\":\"low\",\"summary\":\"Positive feedback on onboarding flow\",\"confidence\":0.99}",
+      "id": "X-5",
+      "gold": {}
+    },
+    {
+      "text": "Our whole warehouse cannot print labels since 06:00, four trucks waiting to leave.",
+      "engine": "api",
+      "model": "openai-fast",
+      "category": "shipping",
+      "category_confidence": 0.95,
+      "urgency": "high",
+      "urgency_model_guess": "high",
+      "urgency_source": "api",
+      "urgency_confidence": 0.95,
+      "summary": "Warehouse label printing failure, trucks delayed",
+      "team": "logistics-team",
+      "sla_hours": 4,
+      "requires_review": false,
+      "attempts": 1,
+      "tokens": {
+        "prompt_tokens": 216,
+        "completion_tokens": 198,
+        "total_tokens": 414,
+        "cached": true
+      },
+      "latency_ms": 1,
+      "raw": "{\"category\":\"shipping\",\"urgency\":\"high\",\"summary\":\"Warehouse label printing failure, trucks delayed\",\"confidence\":0.95}",
+      "id": "X-6",
+      "gold": {}
+    }
+  ],
+  "errors": []
+}

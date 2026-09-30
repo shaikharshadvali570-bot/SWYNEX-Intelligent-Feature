@@ -1,0 +1,330 @@
+{
+  "engine": "ensemble",
+  "summary": {
+    "count": 6,
+    "errors": 0,
+    "needs_review": 1,
+    "categories": {
+      "account": 2,
+      "billing": 1,
+      "shipping": 2,
+      "technical": 1
+    },
+    "urgencies": {
+      "critical": 2,
+      "high": 2,
+      "low": 1,
+      "medium": 1
+    },
+    "elapsed_seconds": 0.0,
+    "seconds_per_ticket": 0.0,
+    "config": {
+      "engine": "ensemble",
+      "threshold": 0.45,
+      "local": {
+        "engine": "local-tfidf-nb",
+        "train_examples": 100,
+        "vocabulary_size": 493,
+        "feature_groups": [
+          "words",
+          "cue",
+          "lex"
+        ],
+        "lexicon_bonus": 1.5,
+        "rule_fusion": true,
+        "category_counts": {
+          "account": 22,
+          "billing": 21,
+          "other": 13,
+          "shipping": 20,
+          "technical": 24
+        },
+        "urgency_counts": {
+          "critical": 15,
+          "high": 25,
+          "low": 30,
+          "medium": 30
+        }
+      },
+      "api": {
+        "engine": "public-llm-api",
+        "endpoint": "https://text.pollinations.ai/openai",
+        "model": "openai-fast",
+        "api_key_configured": false
+      },
+      "sent_to_api": 1
+    }
+  },
+  "results": [
+    {
+      "text": "We were billed 3 times today for the same invoice and our bank is calling us, this needs fixing this hour.",
+      "category": "billing",
+      "category_confidence": 0.704,
+      "urgency": "high",
+      "urgency_model_guess": "high",
+      "urgency_source": "rules",
+      "urgency_rule_score": 2.5,
+      "urgency_confidence": 0.564,
+      "team": "billing-team",
+      "sla_hours": 4,
+      "top_keywords": [
+        "invoic",
+        "bill",
+        "bank",
+        "fix"
+      ],
+      "lexicon_hits": {
+        "billing": 2.0,
+        "technical": 0.0,
+        "shipping": 0.0,
+        "account": 0.0,
+        "other": 0.5
+      },
+      "rule_evidence": [
+        "this hour",
+        "today"
+      ],
+      "requires_review": false,
+      "category_probabilities": {
+        "account": 0.041,
+        "billing": 0.704,
+        "other": 0.12,
+        "shipping": 0.054,
+        "technical": 0.08
+      },
+      "urgency_probabilities": {
+        "critical": 0.039,
+        "high": 0.564,
+        "low": 0.278,
+        "medium": 0.12
+      },
+      "engine": "local",
+      "note": "confident local answer, API skipped",
+      "id": "X-1",
+      "gold": {}
+    },
+    {
+      "text": "App keeps crashing when I attach a photo to a message. Reinstalled twice, phone is a Pixel 8.",
+      "category": "technical",
+      "category_confidence": 0.655,
+      "urgency": "critical",
+      "urgency_model_guess": "high",
+      "urgency_source": "rules",
+      "urgency_rule_score": 3.0,
+      "urgency_confidence": 0.081,
+      "team": "support-l2-engineering",
+      "sla_hours": 1,
+      "top_keywords": [
+        "messag",
+        "crash",
+        "reinstall",
+        "twic"
+      ],
+      "lexicon_hits": {
+        "billing": 0.0,
+        "technical": 1.5,
+        "shipping": 0.0,
+        "account": 0.0,
+        "other": 0.0
+      },
+      "rule_evidence": [
+        "crash",
+        "keeps"
+      ],
+      "requires_review": false,
+      "category_probabilities": {
+        "account": 0.063,
+        "billing": 0.071,
+        "other": 0.173,
+        "shipping": 0.038,
+        "technical": 0.655
+      },
+      "urgency_probabilities": {
+        "critical": 0.081,
+        "high": 0.709,
+        "low": 0.16,
+        "medium": 0.05
+      },
+      "engine": "local",
+      "note": "confident local answer, API skipped",
+      "id": "X-2",
+      "gold": {}
+    },
+    {
+      "text": "Tracking has not updated in 11 days and the courier website says label created only.",
+      "category": "shipping",
+      "category_confidence": 0.747,
+      "urgency": "medium",
+      "urgency_model_guess": "medium",
+      "urgency_source": "model",
+      "urgency_rule_score": 0,
+      "urgency_confidence": 0.533,
+      "team": "logistics-team",
+      "sla_hours": 24,
+      "top_keywords": [
+        "track",
+        "courier",
+        "label",
+        "only"
+      ],
+      "lexicon_hits": {
+        "billing": 0.0,
+        "technical": 0.5,
+        "shipping": 3.0,
+        "account": 0.0,
+        "other": 0.0
+      },
+      "rule_evidence": [],
+      "requires_review": false,
+      "category_probabilities": {
+        "account": 0.057,
+        "billing": 0.08,
+        "other": 0.055,
+        "shipping": 0.747,
+        "technical": 0.062
+      },
+      "urgency_probabilities": {
+        "critical": 0.042,
+        "high": 0.328,
+        "low": 0.098,
+        "medium": 0.533
+      },
+      "engine": "local",
+      "note": "confident local answer, API skipped",
+      "id": "X-3",
+      "gold": {}
+    },
+    {
+      "text": "I think someone else has my password: unfamiliar logins from another country in the last hour.",
+      "category": "account",
+      "category_confidence": 0.714,
+      "urgency": "critical",
+      "urgency_model_guess": "critical",
+      "urgency_source": "model",
+      "urgency_rule_score": 0,
+      "urgency_confidence": 0.676,
+      "team": "account-security-team",
+      "sla_hours": 1,
+      "top_keywords": [
+        "password",
+        "another",
+        "country",
+        "someon"
+      ],
+      "lexicon_hits": {
+        "billing": 0.0,
+        "technical": 0.0,
+        "shipping": 0.0,
+        "account": 3.0,
+        "other": 0.5
+      },
+      "rule_evidence": [],
+      "requires_review": false,
+      "category_probabilities": {
+        "account": 0.714,
+        "billing": 0.04,
+        "other": 0.107,
+        "shipping": 0.062,
+        "technical": 0.076
+      },
+      "urgency_probabilities": {
+        "critical": 0.676,
+        "high": 0.176,
+        "low": 0.105,
+        "medium": 0.043
+      },
+      "engine": "local",
+      "note": "confident local answer, API skipped",
+      "id": "X-4",
+      "gold": {}
+    },
+    {
+      "text": "Just wanted to say the new onboarding flow is really nice, thanks team!",
+      "category": "account",
+      "category_confidence": 0.474,
+      "urgency": "low",
+      "urgency_model_guess": "medium",
+      "urgency_source": "rules",
+      "urgency_rule_score": -3.0,
+      "urgency_confidence": 0.21,
+      "team": "account-security-team",
+      "sla_hours": 72,
+      "top_keywords": [
+        "say",
+        "team",
+        "new",
+        "cue:thanks"
+      ],
+      "lexicon_hits": {
+        "billing": 0.0,
+        "technical": 0.0,
+        "shipping": 0.0,
+        "account": 0.5,
+        "other": 0.0
+      },
+      "rule_evidence": [
+        "just wanted",
+        "thanks"
+      ],
+      "requires_review": false,
+      "category_probabilities": {
+        "account": 0.474,
+        "billing": 0.123,
+        "other": 0.316,
+        "shipping": 0.051,
+        "technical": 0.036
+      },
+      "urgency_probabilities": {
+        "critical": 0.034,
+        "high": 0.23,
+        "low": 0.21,
+        "medium": 0.526
+      },
+      "engine": "local",
+      "note": "confident local answer, API skipped",
+      "id": "X-5",
+      "gold": {}
+    },
+    {
+      "text": "Our whole warehouse cannot print labels since 06:00, four trucks waiting to leave.",
+      "engine": "ensemble",
+      "model": "openai-fast",
+      "category": "shipping",
+      "category_confidence": 0.95,
+      "urgency": "high",
+      "urgency_model_guess": "high",
+      "urgency_source": "api",
+      "urgency_confidence": 0.95,
+      "summary": "Warehouse label printing failure, trucks delayed",
+      "team": "logistics-team",
+      "sla_hours": 4,
+      "requires_review": true,
+      "attempts": 1,
+      "tokens": {
+        "prompt_tokens": 216,
+        "completion_tokens": 198,
+        "total_tokens": 414,
+        "cached": true
+      },
+      "latency_ms": 0,
+      "raw": "{\"category\":\"shipping\",\"urgency\":\"high\",\"summary\":\"Warehouse label printing failure, trucks delayed\",\"confidence\":0.95}",
+      "agree_category": false,
+      "agree_urgency": false,
+      "local_view": {
+        "category": "technical",
+        "urgency": "critical",
+        "category_confidence": 0.41,
+        "top_keywords": [
+          "sinc",
+          "00",
+          "four",
+          "cannot"
+        ]
+      },
+      "note": "engines disagree - human review",
+      "id": "X-6",
+      "gold": {}
+    }
+  ],
+  "errors": []
+}

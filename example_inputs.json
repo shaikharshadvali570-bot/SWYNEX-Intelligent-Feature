@@ -1,0 +1,8 @@
+[
+{"id": "X-1", "text": "We were billed 3 times today for the same invoice and our bank is calling us, this needs fixing this hour.", "context": "customer sent from a business account, plan: enterprise"},
+{"id": "X-2", "text": "App keeps crashing when I attach a photo to a message. Reinstalled twice, phone is a Pixel 8.", "context": "mobile app v4.2.1"},
+{"id": "X-3", "text": "Tracking has not updated in 11 days and the courier website says label created only.", "context": "order 88231, standard delivery"},
+{"id": "X-4", "text": "I think someone else has my password: unfamiliar logins from another country in the last hour.", "context": "user cannot disable 2FA themselves"},
+{"id": "X-5", "text": "Just wanted to say the new onboarding flow is really nice, thanks team!", "context": ""},
+{"id": "X-6", "text": "Our whole warehouse cannot print labels since 06:00, four trucks waiting to leave.", "context": "enterprise customer, SLA: 1h response"}
+]
